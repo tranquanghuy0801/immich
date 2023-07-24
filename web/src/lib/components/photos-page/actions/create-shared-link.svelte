@@ -6,7 +6,7 @@
   import { getAssetControlContext } from '../asset-select-control-bar.svelte';
 
   let showModal = false;
-  const { getAssets, clearSelect } = getAssetControlContext();
+  const { getAssets } = getAssetControlContext();
 </script>
 
 <CircleIconButton title="Share" logo={ShareVariantOutline} on:click={() => (showModal = true)} />
@@ -17,7 +17,6 @@
     shareType={SharedLinkType.Individual}
     on:close={() => {
       showModal = false;
-      clearSelect();
     }}
   />
 {/if}
